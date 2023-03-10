@@ -154,4 +154,3 @@
 - Sorcery (ユーザー認証）
 - Pundit (権限管理)
 - ActiveDecorator (デコレータ)
-
