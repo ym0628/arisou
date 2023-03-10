@@ -131,25 +131,26 @@
 ■使用技術
 
 ●バックエンド
-Ruby 2.7.3
-Ruby on Rails 6.0.3
+- Ruby 2.7.3
+- Ruby on Rails 6.0.3
 
 ●フロントエンド
-Sass/SCSS (CSS)
-Bootstrap 5.0.0 (CSS)
-Vue.js 2.6.14 (JavaScript)
-axios (JS Package/Ajax)
-Leaflet/OpenStreetMap (Map)
+- Sass/SCSS (CSS)
+- Bootstrap 5.0.0 (CSS)
+- Vue.js 2.6.14 (JavaScript)
+- axios (JS Package/Ajax)
+- Leaflet/OpenStreetMap (Map)
 
 ●インフラ、API、開発環境
-AWS
-MySQL 5.7.3
-Spec
-RuboCop
-Twitter API
+- AWS
+- MySQL 5.7.3
+- Spec
+- RuboCop
+- Twitter API
 
 ●使用gem
-Nokogiri (スクレイピング)
-Sorcery (ユーザー認証）
-Pundit (権限管理)
-ActiveDecorator (デコレータ)
+- Nokogiri (スクレイピング)
+- Sorcery (ユーザー認証）
+- Pundit (権限管理)
+- ActiveDecorator (デコレータ)
+
