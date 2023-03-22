@@ -155,3 +155,6 @@
 - Pundit (権限管理)
 - ActiveDecorator (デコレータ)
 
+**■使用技術**
+
+https://www.figma.com/file/JxOqoqjL0ngx7izq5fc4T3/Arisou?t=zzkuuSnbjTYi4yY1-1
