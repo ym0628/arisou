@@ -155,6 +155,9 @@
 - Pundit (権限管理)
 - ActiveDecorator (デコレータ)
 
-**■使用技術**
-
+## 画面遷移図
 https://www.figma.com/file/JxOqoqjL0ngx7izq5fc4T3/Arisou?t=zzkuuSnbjTYi4yY1-1
+
+
+## ER図
+[![Image from Gyazo](https://i.gyazo.com/092f0957101f08f4cb35bc312e58dc04.png)](https://gyazo.com/092f0957101f08f4cb35bc312e58dc04)
