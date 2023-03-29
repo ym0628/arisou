@@ -132,19 +132,19 @@
 **■使用技術**
 
 ●バックエンド
-- Ruby 2.7.3
-- Ruby on Rails 6.0.3
+- Ruby 3.2.1
+- Ruby on Rails 6.1.7.3
 
 ●フロントエンド
 - Sass/SCSS (CSS)
 - Bootstrap 5.0.0 (CSS)
 - Vue.js 2.6.14 (JavaScript)
 - axios (JS Package/Ajax)
-- Leaflet/OpenStreetMap (Map)
+
 
 ●インフラ、API、開発環境
-- AWS
-- MySQL 5.7.3
+- Heroku
+- PostgreSQL
 - Spec
 - RuboCop
 - Twitter API
