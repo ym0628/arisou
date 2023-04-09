@@ -23,6 +23,7 @@
         <li class="nav-item">
           <%= link_to 'メニュー', '#', class: 'nav-link' %>
           <%= link_to 'メニュー', '#', class: 'nav-link' %>
+          <%= link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link' %>
         </li>
 
         <li class="nav-item dropdown dropdown-slide">
@@ -34,7 +35,7 @@
             <div class="dropdown-divider"></div>
             <%= link_to 'マイページ', '#', class: 'dropdown-item' %>
 
-            <%= link_to 'ログイン／ログアウト', '#', class: 'dropdown-item' %>
+            <%= link_to 'ログアウト', logout_path, method: :delete, class: 'dropdown-item' %>
           </div>
         </li>
       </ul>
