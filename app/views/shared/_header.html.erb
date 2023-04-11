@@ -15,10 +15,10 @@
         </div>
         <div class="offcanvas-body">
           <ul class="navbar-nav">
-            <li class="nav-item"><%= link_to 'ホーム', root_path, method: :get, class: 'nav-link' %></li>
-            <li class="nav-item"><%= link_to 'マイページ', '#', class: 'nav-link' %></li>
-            <li class="nav-item"><%= link_to 'ツール新規入力', '#', class: 'nav-link' %></li>
-            <li class="nav-item"><%= link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link' %></li>
+            <li class="nav-item"><%= link_to (t 'defaults.home'), root_path, method: :get, class: 'nav-link' %></li>
+            <li class="nav-item"><%= link_to (t 'defaults.lists'), '#', class: 'nav-link' %></li>
+            <li class="nav-item"><%= link_to (t 'defaults.tool_inputs'), '#', class: 'nav-link' %></li>
+            <li class="nav-item"><%= link_to (t 'defaults.logout'), logout_path, method: :delete, class: 'nav-link' %></li>
           </ul>
         </div>
       </div>
