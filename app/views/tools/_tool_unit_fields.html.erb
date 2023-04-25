@@ -1,0 +1,19 @@
+<div class="nested-fields">
+  <div class="row">
+    <div class="col">
+      <div class="form-group">
+        <%= f.number_field :number, class: 'form-control', placeholder: '台番' %>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-group">
+        <%= f.number_field :medal, class: 'form-control', placeholder: '差枚' %>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-group">
+        <%= link_to_remove_association "削除", f, class: 'btn btn-danger' %>
+      </div>
+    </div>
+  </div>
+</div>

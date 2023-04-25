@@ -10,7 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_04_09_015053) do
+ActiveRecord::Schema.define(version: 2023_04_22_083041) do
+
+  create_table "tool_units", force: :cascade do |t|
+    t.integer "number", null: false
+    t.integer "medal"
+    t.integer "tool_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["tool_id"], name: "index_tool_units_on_tool_id"
+  end
+
+  create_table "tools", force: :cascade do |t|
+    t.string "store_name", null: false
+    t.integer "total_unit", null: false
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_tools_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
@@ -23,4 +41,6 @@ ActiveRecord::Schema.define(version: 2023_04_09_015053) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "tool_units", "tools"
+  add_foreign_key "tools", "users"
 end
