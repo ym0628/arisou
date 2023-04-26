@@ -1,33 +1,40 @@
 <%= form_with model: tool, local: true do |f| %>
   <div class="container">
-    <div class="col-auto">
-      <div class="form-group">
-      <%= f.label :store_name %>
-      <%= f.text_field :store_name, class: 'form-control' %>
+    <div class="d-grid gap-3">
+      <div class="col-auto">
+        <div class="form-group">
+        <%= f.label :store_name %>
+        <%= f.text_field :store_name, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="col-auto">
+        <div class="form-group">
+          <%= f.label :total_unit %>
+          <%= f.text_field :total_unit, class: 'form-control' %>
+        </div>  
+      </div>
+
+      <div class="unit">
+        <!-- 台番・差枚入力フィールド -->
+        <%= f.fields_for :tool_units do |n| %>
+          <%= render "tools/tool_unit_fields", f: n %>
+        <% end %>
+        <!-- 追加フィールドの表示場所 -->
+        <div id="add-tool-unit-fields-point"></div>
+        <!-- フィールド追加ボタン -->
+        <div class="mt-3">
+          <%= link_to_add_association "入力フォームを追加", f, :tool_units,
+          class: 'btn btn-dark',
+          data: {
+          association_insertion_node: '#add-tool-unit-fields-point',
+          association_insertion_method: 'before'
+          } %>
+        </div>
       </div>
     </div>
-    <div class="col-auto">
-      <div class="form-group">
-        <%= f.label :total_unit %>
-        <%= f.text_field :total_unit, class: 'form-control' %>
-      </div>  
-    </div>
 
-    <div class="unit">
-      <!-- 台番・差枚入力フィールド -->
-      <%= f.fields_for :tool_units do |n| %>
-        <%= render "tools/tool_unit_fields", f: n %>
-      <% end %>
-      <!-- 追加フィールドの表示場所 -->
-      <div id="add-tool-unit-fields-point"></div>
-      <!-- フィールド追加ボタン -->
-      <%= link_to_add_association "入力フォームを追加", f, :tool_units,
-      class: 'btn btn-dark',
-      data: {
-      association_insertion_node: '#add-tool-unit-fields-point',
-      association_insertion_method: 'before'
-      } %>
-    </div>
+  </div>
+  <div class="mt-4 mb-3 ms-3">
     <%= f.submit (t 'tools.new.output'), class: 'btn btn-primary' %>
   </div>
 <% end %>
