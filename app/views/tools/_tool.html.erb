@@ -1,0 +1,21 @@
+<div class="col-sm-12 col-lg-4 mb-3">
+  <div id="tool-id-<%= tool.id %>">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">
+          <%= link_to tool.store_name, tool_path(tool) %>
+        </h4>
+        <div class='mr10 float-right'>
+          <a href="#"><%= icon 'fas', 'trash', class: 'pr-1' %></a>
+          <a href="#"><%= icon 'fa', 'pen' %></a>
+        </div>
+        <ul class="list-inline">
+          <li class="list-inline-item">
+            <%= icon 'far', 'calendar' %>
+            <%= l tool.created_at, format: :long %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

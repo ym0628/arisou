@@ -3,6 +3,8 @@ ja:
     login: 'ログイン'
     register: '登録'
     logout: 'ログアウト'
+    message:
+      require_login: 'ログインしてください'
     home: 'ホーム'
     lists: 'マイページ'
     tool_inputs: 'ツール新規入力'
@@ -23,17 +25,15 @@ ja:
       fail: 'ログインに失敗しました'
     destroy:
       success: 'ログアウトしました'
-  tool_inputs:
+  tools:
     new:
       title: 'ツール新規入力'
-  tool_outputs:
+      output: '出力する'
     index:
       title: 'ツール出力結果一覧'
-      no_result: 'ツール出力結果がありません'
+      no_result: '出力されたツール結果がありません。'
     show:
       title: 'ツール出力結果'
-    edit:
-      title: 'ツール出力結果編集'
-  lists:
-    index:
-      title: 'マイページ'
+    create:
+      success: 'ツール出力に成功しました'
+      fail: 'ツール出力に失敗しました'

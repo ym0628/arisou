@@ -10,3 +10,8 @@ ja:
         password_confirmation: 'パスワード確認'
         last_name: '姓'
         first_name: '名'
+      tool:
+        store_name: '店舗名'
+        total_unit: 'パチスロ総設置台数'
+        unit_number: '台番'
+        medal: '差枚'

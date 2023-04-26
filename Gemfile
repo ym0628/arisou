@@ -32,6 +32,7 @@ gem "font-awesome-sass", "~> 6.4.0"
 gem 'sorcery', '0.16.4'
 gem 'pry-byebug'
 gem 'rails-i18n', '~> 6.0'
+gem 'cocoon'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

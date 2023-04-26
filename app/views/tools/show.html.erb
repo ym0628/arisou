@@ -1,0 +1,30 @@
+<% content_for(:store_name, @tool.store_name) %>
+<div class="container pt-5">
+  <div class="row mb-3">
+    <div class="col-lg-8 offset-lg-2">
+      <h1><%= t('.title') %></h1>
+      <!-- ツール出力結果内容 -->
+      <article class="card">
+        <div class="card-body">
+          <div class='row'>
+            <div class='col-md-9'>
+              <h3 class="d-inline"><%= @tool.store_name %></h3>
+              <%= render 'crud_menus', tool: @tool if current_user.own?(@tool) %>
+              <ul class="list-inline">
+                <li class="list-inline-item">出力時刻：<%= l @tool.created_at, format: :long  %></li>
+              </ul>
+              <ul class="list-inline">
+                <li class="list-inline-item">パチスロ総設置台数：<%= @tool.total_unit %></li>
+              </ul>
+              <ul class="list-inline">
+                <li class="list-inline-item">台番：<%= @tool_units.number %></li>
+                <li class="list-inline-item">差枚：<%= @tool_units.medal %></li>
+              </ul>
+            </div>
+          </div>
+          <!-- ここに出力結果が表示されるようにしたい。 -->
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
