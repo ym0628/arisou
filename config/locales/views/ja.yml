@@ -5,6 +5,13 @@ ja:
     logout: 'ログアウト'
     message:
       require_login: 'ログインしてください'
+      created: '出力しました'
+      not_created: '出力きませんでした'
+      updated: '更新しました'
+      not_updated: '更新できませんでした'
+      deleted: '出力結果を削除しました'
+      delete_confirm: '出力結果を削除しますか？'
+      not_authorized: '権限がありません'
     home: 'ホーム'
     lists: 'マイページ'
     tool_inputs: 'ツール新規入力'
@@ -34,6 +41,8 @@ ja:
       no_result: '出力されたツール結果がありません。'
     show:
       title: 'ツール出力結果'
+    edit:
+      title: 'ツール出力結果編集'
     create:
       success: 'ツール出力に成功しました'
       fail: 'ツール出力に失敗しました'
