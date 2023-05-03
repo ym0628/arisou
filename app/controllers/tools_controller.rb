@@ -19,7 +19,7 @@ class ToolsController < ApplicationController
   end
 
   def show
-    @tool = Tool.find(params[:id])
+    @tool = current_user.tools.find(params[:id])
     #総設置台数から各末尾の分母を割り出す
     @each_denominator = @tool.total_unit.to_f / 10.round(1)
     #配列に作り直す
@@ -137,6 +137,26 @@ class ToolsController < ApplicationController
       end
       @average_same_number = (@sum_same_number / @each_denominator).round(1)
     end
+  end
+
+  def edit
+    @tool = current_user.tools.find(params[:id])
+  end
+
+  def update
+    @tool = current_user.tools.find(params[:id])
+    if @tool.update(tool_params)
+      redirect_to @tool, success: t('defaults.message.updated')
+    else
+      flash.now['danger'] = t('defaults.message.not_updated')
+      render :edit
+    end
+  end
+
+  def destroy
+    @tool = current_user.tools.find(params[:id])
+    @tool.destroy!
+    redirect_to tools_path, success: t('defaults.message.deleted')
   end
 
   private

@@ -6,8 +6,7 @@
           <%= link_to tool.store_name, tool_path(tool) %>
         </h4>
         <div class='mr10 float-right'>
-          <a href="#"><%= icon 'fas', 'trash', class: 'pr-1' %></a>
-          <a href="#"><%= icon 'fa', 'pen' %></a>
+          <%= render 'crud_menus', tool: tool if current_user.own?(tool) %>
         </div>
         <ul class="list-inline">
           <li class="list-inline-item">
