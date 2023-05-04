@@ -1,12 +1,12 @@
-<ul class='crud-menu-btn list-inline float-right'>
-  <li class="list-inline-item">
-    <%= link_to edit_tool_path(tool), id: "button-edit-#{tool.id}" do %>
+<ul class='crud-menu-btn list-inline float-right mt-3'>
+  <li class="list-inline-item me-3">
+    <%= link_to edit_tool_path(tool), id: "button-edit-#{tool.id}", class: "btn btn btn-secondary text-white" do %>
       <%= icon 'fa', 'pen' %>
     <% end %>
   </li>
   <li class="list-inline-item">
-    <%= link_to tool_path(tool), id: "button-delete-#{tool.id}", method: :delete, data: { confirm: t('defaults.message.delete_confirm') } do %>
-      <%= icon 'fas', 'trash' %>
+    <%= link_to tool_path(tool), id: "button-delete-#{tool.id}", class: "btn btn-danger", method: :delete, data: { confirm: t('defaults.message.delete_confirm') } do %>
+      <%= icon 'fas', 'trash-alt' %>
     <% end %>
   </li>
 </ul>
