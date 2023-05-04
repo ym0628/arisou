@@ -37,7 +37,7 @@ ja:
       title: 'ツール新規入力'
       output: '出力する'
     index:
-      title: 'ツール出力結果一覧'
+      title: 'マイページ'
       no_result: '出力されたツール結果がありません。'
     show:
       title: 'ツール出力結果'
