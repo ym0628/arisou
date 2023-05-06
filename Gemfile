@@ -33,11 +33,14 @@ gem 'sorcery', '0.16.4'
 gem 'pry-byebug'
 gem 'rails-i18n', '~> 6.0'
 gem 'cocoon'
+gem 'config'
+gem 'draper'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'sqlite3', '~> 1.4' # <= 開発環境とテスト環境用として設定
+  gem 'letter_opener_web', '~> 1.0'
 end
 
 group :development do
