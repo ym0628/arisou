@@ -13,5 +13,6 @@ ja:
       tool:
         store_name: '店舗名'
         total_unit: 'パチスロ総設置台数'
-        unit_number: '台番'
-        medal: '差枚'
+      tool/tool_units:
+        number: '台番'
+        medal: '差枚' 

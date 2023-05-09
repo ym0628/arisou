@@ -3,6 +3,7 @@ ja:
     login: 'ログイン'
     register: '登録'
     logout: 'ログアウト'
+    password_reset: 'パスワードリセット'
     message:
       require_login: 'ログインしてください'
       created: '出力しました'
@@ -46,3 +47,14 @@ ja:
     create:
       success: 'ツール出力に成功しました'
       fail: 'ツール出力に失敗しました'
+  password_resets:
+    new:
+      title: 'パスワードリセット申請'
+      submit: '送信'
+    edit:
+      title: 'パスワードリセット'
+    create:
+      success: 'パスワードリセット手順を送信しました'
+    update:
+      success: 'パスワードを変更しました'
+      fail: 'パスワードの変更に失敗しました'
