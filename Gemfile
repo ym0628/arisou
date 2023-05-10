@@ -61,6 +61,12 @@ group :development do
   gem 'spring'
 end
 
+group :test do
+  gem 'shoulda-matchers'
+  gem 'capybara'
+  gem 'webdrivers'
+end
+
 # 本番環境用のgemグループを新しく作成しPostgresを指定
 group :production do
   gem 'pg'
