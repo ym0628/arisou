@@ -1,5 +1,51 @@
-<div class="top-wrapper">
-  <div class="top-inner-text">
-    <h1>パチスロ｜末尾発見ツール Arisou</h1>
+<div class="text-center mt-4">
+  <%= image_tag 'machine.png', size: "350x350", class:"rounded mx-auto d-block" %>
+</div>
+<div class="container text-center">
+  <div class="text-center mt-4 mb-4">
+    <h1 class="fs-2">パチスロ末尾発見ツール<br>Arisou</h1>
   </div>
+  <div class="mt-4 mb-5">
+    <%= link_to t('今すぐ始める'), new_tool_path, class: 'btn btn-dark btn-lg text-white' %>
+  </div>
+    <div class="border-bottom border-dark mt-5 mb-5 pb-5"></div>
+    <h2 class="text-decoration-underline mt-5 mb-5">ツールの利用手順</h2>
+      <div class="mb-5 border">
+        <div class="mt-3 mb-3">
+          <%= image_tag 'how_to_1.png', size: "300x200", class:"rounded mx-auto d-block" %>
+        </div>
+        <h3 class="fs-4">店舗名とパチスロ総設置台数を入力</h3>
+        <p>ユーザー登録後、メニューから「ツール新規入力」画面に進みましょう。<br>店舗名とパチスロの総設置台数を入力します。</p>
+      </div>
+      <div class="mb-5 border">
+        <div class="mt-3 mb-3">
+          <%= image_tag 'how_to_2.png', size: "300x280", class:"rounded mx-auto d-block" %>
+        </div>
+        <h3 class="fs-4">ありそうな末尾の台番号と差枚数を入力</h3>
+        <p>次に「この末尾がありそう！」と思った台番号と差枚数を入力していきましょう。<br>入力する台データが多ければ多いほど、より信頼度の高いツール結果が得られます。</p>
+      </div>
+      <div class="mb-5 border">
+        <div class="mt-3 mb-3">
+          <%= image_tag 'how_to_3.png', size: "300x200", class:"rounded mx-auto d-block" %>
+        </div>
+        <h3 class="fs-4">末尾ごとの勝率・平均差枚数を出力</h3>
+        <p>入力が終わったら出力ボタンを押してツール結果を確認しましょう。<br>末尾ごとの勝率・総差枚数・平均差枚数が割り出され、当たりの末尾がどこに隠されているかを可視化することができます。</p>
+      </div>
+      <div class="mb-5 border">
+        <div class="mt-3 mb-3">
+          <%= image_tag 'how_to_4.png', size: "300x230", class:"rounded mx-auto d-block" %>
+        </div>
+        <h3 class="fs-4">出力データはマイページに保存可能</h3>
+        <p>名前・メールアドレス・パスワードを入れるだけで簡単にユーザー登録が可能です。<br>その後は出力したツール結果を保存でき、編集機能で台データを後から更新することもできて便利です。</p>
+      </div>
+      <div class="flex justify-center items-center">
+        <div class="p-1">
+          <%= link_to t('defaults.terms'), terms_of_use_path, class: 'link-secondary' %>
+        </div>
+        <div class="p-1 mb-4">
+          <%= link_to t('defaults.privacy'), privacy_policy_path, class: 'link-secondary' %>
+      </div>
+      <div class="mt-4 mb-5">
+        <%= link_to t('今すぐ始める'), new_tool_path, class: 'btn btn-dark btn-lg text-white' %>
+      </div>
 </div>

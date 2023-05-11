@@ -4,6 +4,8 @@ ja:
     register: '登録'
     logout: 'ログアウト'
     password_reset: 'パスワードリセット'
+    terms: '利用規約'
+    privacy: 'プライバシーポリシー'
     message:
       require_login: 'ログインしてください'
       created: '出力しました'
