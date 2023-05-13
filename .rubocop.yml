@@ -12,9 +12,11 @@ AllCops:
     - "bin/**/*"
     - "node_modules/**/*"
     - "config/**/*"
+    - "app/mailers/application_mailer.rb"
   DisplayCopNames: true
   DisplayStyleGuide: true
   NewCops: enable
+  SuggestExtensions: false
 
 Bundler/OrderedGems:
   Enabled: false
