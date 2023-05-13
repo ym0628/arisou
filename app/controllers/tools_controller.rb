@@ -3,21 +3,6 @@ class ToolsController < ApplicationController
     @tools = current_user.tools.includes(:user).order(created_at: :desc)
   end
 
-  def new
-    @tool = Tool.new
-    @tool_units = @tool.tool_units.build
-  end
-
-  def create
-    @tool = current_user.tools.build(tool_params)
-    if @tool.save
-      redirect_to tool_path(@tool), success: t('.success')
-    else
-      flash.now['danger'] = t('.fail')
-      render :new
-    end
-  end
-
   def show
     @tool = current_user.tools.find(params[:id])
     #総設置台数から各末尾の分母を割り出す
@@ -139,8 +124,23 @@ class ToolsController < ApplicationController
     end
   end
 
+  def new
+    @tool = Tool.new
+    @tool_units = @tool.tool_units.build
+  end
+
   def edit
     @tool = current_user.tools.find(params[:id])
+  end
+
+  def create
+    @tool = current_user.tools.build(tool_params)
+    if @tool.save
+      redirect_to tool_path(@tool), success: t('.success')
+    else
+      flash.now['danger'] = t('.fail')
+      render :new
+    end
   end
 
   def update
