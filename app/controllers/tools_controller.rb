@@ -7,10 +7,16 @@ class ToolsController < ApplicationController
     @tool = current_user.tools.find(params[:id])
     # 総設置台数から各末尾の分母を割り出す
     @each_denominator = @tool.total_unit.to_f / 10.round(1)
+    # 台番号に重複があった場合に注意喚起のメッセージを表示
+    unit_number_array = @tool.tool_units.pluck(:number)
+    if unit_number_array.size != unit_number_array.uniq.size
+      duplication_number = unit_number_array.select { |e| unit_number_array.count(e) > 1 }.uniq
+      @duplication = flash.now[:warning] = "台番号 #{duplication_number} が#{t('defaults.message.duplication')}"
+    end
     # 配列に作り直す
     @tool_units_array = @tool.tool_units.pluck(:number, :medal)
     # 差枚数がプラスの要素だけを取り出した配列を作り、さらに差枚プラスの台番だけを残した配列に直す
-    @win_unit_number_array = @tool_units_array.select { |_key, value| value > 0 }.pluck(0)
+    @win_unit_number_array = @tool_units_array.select { |key, value| value > 0 }.pluck(0)
     # 各末尾(0~9)の台数をカウント
     @win_unit_number_ones_place_array_count = @win_unit_number_array.map do |n|
                                                 n.digits[0]
@@ -33,100 +39,54 @@ class ToolsController < ApplicationController
     @win_rate_same_number = ((@win_same_unit_number_array_count.to_i / @each_denominator) * 100).round(1)
 
     # 各末尾(0~9まで)ごとの総差枚と平均差枚
-    @ones_place_group = @tool_units_array.group_by { |key, _value| key.digits[0] }.sort.to_h
+    @ones_place_group = @tool_units_array.group_by { |key, value| key.digits[0] }.sort.to_h
 
-    if @ones_place_group[0].present?
-      @sum0 = 0
-      @ones_place_group[0].each do |_number, medal|
-        @sum0 += medal
-      end
-      @average0 = (@sum0 / @each_denominator).round(1)
+    def calculate_sum(medals)
+      sum = 0
+      medals.each { |number, medal| sum += medal }
+      sum
     end
 
-    if @ones_place_group[1].present?
-      @sum1 = 0
-      @ones_place_group[1].each do |_number, medal|
-        @sum1 += medal
-      end
-      @average1 = (@sum1 / @each_denominator).round(1)
+    def calculate_average(medals)
+      sum = 0
+      medals.each { |number, medal| sum += medal }
+      average = (sum / @each_denominator).round(1)
     end
 
-    if @ones_place_group[2].present?
-      @sum2 = 0
-      @ones_place_group[2].each do |_number, medal|
-        @sum2 += medal
-      end
-      @average2 = (@sum2 / @each_denominator).round(1)
-    end
+    # 各末尾の総差枚数
+    @sum0 = calculate_sum(@ones_place_group[0]) if @ones_place_group[0].present?
+    @sum1 = calculate_sum(@ones_place_group[1]) if @ones_place_group[1].present?
+    @sum2 = calculate_sum(@ones_place_group[2]) if @ones_place_group[2].present?
+    @sum3 = calculate_sum(@ones_place_group[3]) if @ones_place_group[3].present?
+    @sum4 = calculate_sum(@ones_place_group[4]) if @ones_place_group[4].present?
+    @sum5 = calculate_sum(@ones_place_group[5]) if @ones_place_group[5].present?
+    @sum6 = calculate_sum(@ones_place_group[6]) if @ones_place_group[6].present?
+    @sum7 = calculate_sum(@ones_place_group[7]) if @ones_place_group[7].present?
+    @sum8 = calculate_sum(@ones_place_group[8]) if @ones_place_group[8].present?
+    @sum9 = calculate_sum(@ones_place_group[9]) if @ones_place_group[9].present?
 
-    if @ones_place_group[3].present?
-      @sum3 = 0
-      @ones_place_group[3].each do |_number, medal|
-        @sum3 += medal
-      end
-      @average3 = (@sum3 / @each_denominator).round(1)
-    end
-
-    if @ones_place_group[4].present?
-      @sum4 = 0
-      @ones_place_group[4].each do |_number, medal|
-        @sum4 += medal
-      end
-      @average4 = (@sum4 / @each_denominator).round(1)
-    end
-
-    if @ones_place_group[5].present?
-      @sum5 = 0
-      @ones_place_group[5].each do |_number, medal|
-        @sum5 += medal
-      end
-      @average5 = (@sum5 / @each_denominator).round(1)
-    end
-
-    if @ones_place_group[6].present?
-      @sum6 = 0
-      @ones_place_group[6].each do |_number, medal|
-        @sum6 += medal
-      end
-      @average6 = (@sum6 / @each_denominator).round(1)
-    end
-
-    if @ones_place_group[7].present?
-      @sum7 = 0
-      @ones_place_group[7].each do |_number, medal|
-        @sum7 += medal
-      end
-      @average7 = (@sum7 / @each_denominator).round(1)
-    end
-
-    if @ones_place_group[8].present?
-      @sum8 = 0
-      @ones_place_group[8].each do |_number, medal|
-        @sum8 += medal
-      end
-      @average8 = (@sum8 / @each_denominator).round(1)
-    end
-
-    if @ones_place_group[9].present?
-      @sum9 = 0
-      @ones_place_group[9].each do |_number, medal|
-        @sum9 += medal
-      end
-      @average9 = (@sum9 / @each_denominator).round(1)
-    end
+    # 各末尾の平均差枚数
+    @average0 = calculate_average(@ones_place_group[0]) if @ones_place_group[0].present?
+    @average1 = calculate_average(@ones_place_group[1]) if @ones_place_group[1].present?
+    @average2 = calculate_average(@ones_place_group[2]) if @ones_place_group[2].present?
+    @average3 = calculate_average(@ones_place_group[3]) if @ones_place_group[3].present?
+    @average4 = calculate_average(@ones_place_group[4]) if @ones_place_group[4].present?
+    @average5 = calculate_average(@ones_place_group[5]) if @ones_place_group[5].present?
+    @average6 = calculate_average(@ones_place_group[6]) if @ones_place_group[6].present?
+    @average7 = calculate_average(@ones_place_group[7]) if @ones_place_group[7].present?
+    @average8 = calculate_average(@ones_place_group[8]) if @ones_place_group[8].present?
+    @average9 = calculate_average(@ones_place_group[9]) if @ones_place_group[9].present?
 
     # 末尾ゾロ目の総差枚と平均差枚数
     # 1桁の台番を除き、かつ末尾ゾロ目台番データのみを配列にして返す
-    @same_number_tool_units_array = @tool_units_array.select do |n, _m|
+    @same_number_tool_units_array = @tool_units_array.select do |n, m|
                                       n >= 10
-                                    end.select { |n, _m| n.digits[0] == n.digits[1] }
+                                    end.select { |n, m| n.digits[0] == n.digits[1] }
     # 末尾ゾロ目の総差枚数・平均差枚数を計算
     return unless @same_number_tool_units_array.present?
 
     @sum_same_number = 0
-    @same_number_tool_units_array.each do |_number, medal|
-      @sum_same_number += medal
-    end
+    @same_number_tool_units_array.each { |number, medal| @sum_same_number += medal }
     @average_same_number = (@sum_same_number / @each_denominator).round(1)
   end
 

@@ -15,6 +15,7 @@ ja:
       deleted: '出力結果を削除しました'
       delete_confirm: '出力結果を削除しますか？'
       not_authorized: '権限がありません'
+      duplication: '重複しています。確認してください。'
     home: 'ホーム'
     lists: 'マイページ'
     tool_inputs: 'ツール新規入力'
