@@ -100,7 +100,7 @@
                 </table>
               <!-- 入力した値を表示 -->
               <h4 class="mt-5 mb-3 ">入力値</h4>
-              <% @tool.tool_units.each do |tool_unit| %>
+              <% @tool.tool_units.sort_by { |x| x['number'] }.each do |tool_unit| %>
                 <ul class="list-inline mb-2">
                   <li class="list-inline-item">台番：<%= tool_unit.number %></li>
                   <li class="list-inline-item">差枚：<%= tool_unit.medal %></li>
