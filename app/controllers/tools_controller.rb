@@ -80,8 +80,8 @@ class ToolsController < ApplicationController
     if same_number_array.present?
       @sum_same_number = 0
       same_number_array.each { |_number, medal| @sum_same_number += medal }
+      @average_same_number = (@sum_same_number / @each_denominator).round(1)
     end
-    @average_same_number = (@sum_same_number / @each_denominator).round(1)
   end
 
   def new
