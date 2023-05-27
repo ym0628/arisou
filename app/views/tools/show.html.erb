@@ -32,69 +32,69 @@
                   <tbody>
                     <tr>
                       <th scope="row" class="pt-0 pb-0">0</th>
-                        <td class="pt-0 pb-0"><%= @win_rate0 %>%<br>(<%= @win_count[0].to_i %>/<%= @each_denominator.round(0) %>台)</td>
-                        <td class="pt-0 pb-0"><%= @sum0.to_i %></td>
-                        <td class="pt-0 pb-0"><%= @average0.to_i.round(0) %></td>
+                        <td class="pt-0 pb-0"><%= @tool.win_rate0(@tool) %>%<br>(<%= @tool.win_count(@tool)[0].to_i%>/<%= @tool.each_denominator(@tool).round(0)%>台)</td>
+                        <td class="pt-0 pb-0"><%= @tool.sum0(@tool).to_i %></td>
+                        <td class="pt-0 pb-0"><%= @tool.average0(@tool).to_i %></td>
                     </tr>
                     <tr>
                       <th scope="row">1</th>
-                      <td class="pt-0 pb-0"><%= @win_rate1 %>%<br>(<%= @win_count[1].to_i %>/<%= @each_denominator.round(0) %>台)</td>
-                      <td class="pt-0 pb-0"><%= @sum1.to_i %></td>
-                      <td class="pt-0 pb-0"><%= @average1.to_i.round(0) %></td>
+                      <td class="pt-0 pb-0"><%= @tool.win_rate1(@tool) %>%<br>(<%= @tool.win_count(@tool)[1].to_i%>/<%= @tool.each_denominator(@tool).round(0)%>台)</td>
+                      <td class="pt-0 pb-0"><%= @tool.sum1(@tool).to_i %></td>
+                      <td class="pt-0 pb-0"><%= @tool.average1(@tool).to_i %></td>
                     </tr>
                     <tr>
                       <th scope="row">2</th>
-                      <td class="pt-0 pb-0"><%= @win_rate2 %>%<br>(<%= @win_count[2].to_i %>/<%= @each_denominator.round(0) %>台)</td>
-                      <td class="pt-0 pb-0"><%= @sum2.to_i %></td>
-                      <td class="pt-0 pb-0"><%= @average2.to_i.round(0) %></td>
+                      <td class="pt-0 pb-0"><%= @tool.win_rate2(@tool) %>%<br>(<%= @tool.win_count(@tool)[2].to_i%>/<%= @tool.each_denominator(@tool).round(0)%>台)</td>
+                      <td class="pt-0 pb-0"><%= @tool.sum2(@tool).to_i %></td>
+                      <td class="pt-0 pb-0"><%= @tool.average2(@tool).to_i %></td>
                     </tr>
                     <tr>
                       <th scope="row">3</th>
-                      <td class="pt-0 pb-0"><%= @win_rate3 %>%<br>(<%= @win_count[3].to_i %>/<%= @each_denominator.round(0) %>台)</td>
-                      <td class="pt-0 pb-0"><%= @sum3.to_i %></td>
-                      <td class="pt-0 pb-0"><%= @average3.to_i.round(0) %></td>
+                      <td class="pt-0 pb-0"><%= @tool.win_rate3(@tool) %>%<br>(<%= @tool.win_count(@tool)[3].to_i%>/<%= @tool.each_denominator(@tool).round(0)%>台)</td>
+                      <td class="pt-0 pb-0"><%= @tool.sum3(@tool).to_i %></td>
+                      <td class="pt-0 pb-0"><%= @tool.average3(@tool).to_i %></td>
                     </tr>
                     <tr>
                       <th scope="row">4</th>
-                      <td class="pt-0 pb-0"><%= @win_rate4 %>%<br>(<%= @win_count[4].to_i %>/<%= @each_denominator.round(0) %>台)</td>
-                      <td class="pt-0 pb-0"><%= @sum4.to_i %></td>
-                      <td class="pt-0 pb-0"><%= @average4.to_i.round(0) %></td>
+                      <td class="pt-0 pb-0"><%= @tool.win_rate4(@tool) %>%<br>(<%= @tool.win_count(@tool)[4].to_i%>/<%= @tool.each_denominator(@tool).round(0)%>台)</td>
+                      <td class="pt-0 pb-0"><%= @tool.sum4(@tool).to_i %></td>
+                      <td class="pt-0 pb-0"><%= @tool.average4(@tool).to_i %></td>
                     </tr>
                     <tr>
                       <th scope="row">5</th>
-                      <td class="pt-0 pb-0"><%= @win_rate5 %>%<br>(<%= @win_count[5].to_i %>/<%= @each_denominator.round(0) %>台)</td>
-                      <td class="pt-0 pb-0"><%= @sum5.to_i %></td>
-                      <td class="pt-0 pb-0"><%= @average5.to_i.round(0) %></td>
+                      <td class="pt-0 pb-0"><%= @tool.win_rate5(@tool) %>%<br>(<%= @tool.win_count(@tool)[5].to_i%>/<%= @tool.each_denominator(@tool).round(0)%>台)</td>
+                      <td class="pt-0 pb-0"><%= @tool.sum5(@tool).to_i %></td>
+                      <td class="pt-0 pb-0"><%= @tool.average5(@tool).to_i %></td>
                     </tr>
                     <tr>
                       <th scope="row">6</th>
-                      <td class="pt-0 pb-0"><%= @win_rate6 %>%<br>(<%= @win_count[6].to_i %>/<%= @each_denominator.round(0) %>台)</td>
-                      <td class="pt-0 pb-0"><%= @sum6.to_i %></td>
-                      <td class="pt-0 pb-0"><%= @average6.to_i.round(0) %></td>
+                      <td class="pt-0 pb-0"><%= @tool.win_rate6(@tool) %>%<br>(<%= @tool.win_count(@tool)[6].to_i%>/<%= @tool.each_denominator(@tool).round(0)%>台)</td>
+                      <td class="pt-0 pb-0"><%= @tool.sum6(@tool).to_i %></td>
+                      <td class="pt-0 pb-0"><%= @tool.average6(@tool).to_i %></td>
                     </tr>
                     <tr>
                       <th scope="row">7</th>
-                      <td class="pt-0 pb-0"><%= @win_rate7 %>%<br>(<%= @win_count[7].to_i %>/<%= @each_denominator.round(0) %>台)</td>
-                      <td class="pt-0 pb-0"><%= @sum7.to_i %></td>
-                      <td class="pt-0 pb-0"><%= @average7.to_i.round(0) %></td>
+                      <td class="pt-0 pb-0"><%= @tool.win_rate7(@tool) %>%<br>(<%= @tool.win_count(@tool)[7].to_i%>/<%= @tool.each_denominator(@tool).round(0)%>台)</td>
+                      <td class="pt-0 pb-0"><%= @tool.sum7(@tool).to_i %></td>
+                      <td class="pt-0 pb-0"><%= @tool.average7(@tool).to_i %></td>
                     </tr>
                     <tr>
                       <th scope="row">8</th>
-                      <td class="pt-0 pb-0"><%= @win_rate8 %>%<br>(<%= @win_count[8].to_i %>/<%= @each_denominator.round(0) %>台)</td>
-                      <td class="pt-0 pb-0"><%= @sum8.to_i %></td>
-                      <td class="pt-0 pb-0"><%= @average8.to_i.round(0) %></td>
+                      <td class="pt-0 pb-0"><%= @tool.win_rate8(@tool) %>%<br>(<%= @tool.win_count(@tool)[8].to_i%>/<%= @tool.each_denominator(@tool).round(0)%>台)</td>
+                      <td class="pt-0 pb-0"><%= @tool.sum8(@tool).to_i %></td>
+                      <td class="pt-0 pb-0"><%= @tool.average8(@tool).to_i %></td>
                     </tr>
                     <tr>
                       <th scope="row">9</th>
-                      <td class="pt-0 pb-0"><%= @win_rate9 %>%<br>(<%= @win_count[9].to_i %>/<%= @each_denominator.round(0) %>台)</td>
-                      <td class="pt-0 pb-0"><%= @sum9.to_i %></td>
-                      <td class="pt-0 pb-0"><%= @average9.to_i.round(0) %></td>
+                      <td class="pt-0 pb-0"><%= @tool.win_rate9(@tool) %>%<br>(<%= @tool.win_count(@tool)[9].to_i%>/<%= @tool.each_denominator(@tool).round(0)%>台)</td>
+                      <td class="pt-0 pb-0"><%= @tool.sum9(@tool).to_i %></td>
+                      <td class="pt-0 pb-0"><%= @tool.average9(@tool).to_i %></td>
                     </tr>
                     <tr>
                       <th scope="row">ゾロ</th>
-                      <td class="pt-0 pb-0"><%= @win_rate_same_number %>%<br>(<%= @win_same_number_count.to_i %>/<%= @each_denominator.round(0) %>台)</td>
-                      <td class="pt-0 pb-0"><%= @sum_same_number.to_i %></td>
-                      <td class="pt-0 pb-0"><%= @average_same_number.to_i.round(0) %></td>
+                      <td class="pt-0 pb-0"><%= @tool.win_rate_same_number(@tool) %>%<br>(<%= @tool.win_same_number_count(@tool).to_i %>/<%= @tool.each_denominator(@tool).round(0) %>台)</td>
+                      <td class="pt-0 pb-0"><%= @tool.sum_same_number(@tool).to_i %></td>
+                      <td class="pt-0 pb-0"><%= @tool.average_same_number(@tool).to_i %></td>
                     </tr>
                   </tbody>
                 </table>
