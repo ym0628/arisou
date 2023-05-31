@@ -5,4 +5,20 @@ class Tool < ApplicationRecord
 
   validates :store_name, presence: true, length: { maximum: 255 }
   validates :total_unit, presence: true, length: { maximum: 255 }
+
+  include Calc
+  include WinRate
+  include SumMedals
+  include AverageMedals
+
+  # 台番号のみの配列を返すロジック
+  def number_array(tool)
+    tool.tool_units.pluck(:number)
+  end
+
+  # 台番号の重複を判定してその配列を返すロジック（注意喚起のメッセージ表示はコントローラーに記述）
+  def duplication?(tool)
+    (return unless number_array(tool).size != number_array(tool).uniq.size)
+    number_array(tool).select { |e| number_array(tool).count(e) > 1 }.uniq
+  end
 end
