@@ -4,7 +4,8 @@ class Tool < ApplicationRecord
   accepts_nested_attributes_for :tool_units, allow_destroy: true, reject_if: :all_blank
 
   validates :store_name, presence: true, length: { maximum: 255 }
-  validates :total_unit, presence: true, length: { maximum: 255 }
+  validates :total_unit, presence: true, length: { maximum: 255 },
+                         numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
   include Calc
   include WinRate

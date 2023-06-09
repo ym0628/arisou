@@ -48,6 +48,7 @@ group :development, :test do
   gem 'rubocop-performance', require: false
   gem 'rspec-rails'
   gem 'factory_bot_rails'
+  gem 'faker'
 end
 
 group :development do
@@ -65,6 +66,7 @@ group :test do
   gem 'shoulda-matchers'
   gem 'capybara'
   gem 'webdrivers'
+  gem 'selenium-webdriver', '4.9.0'
 end
 
 # 本番環境用のgemグループを新しく作成しPostgresを指定

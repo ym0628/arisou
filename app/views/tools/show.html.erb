@@ -1,5 +1,5 @@
 <% content_for(:title, t('.title')) %>
-<div class="container pt-4">
+<div class="container pt-4 ps-1 pe-1">
   <div class="row mb-3">
     <div class="col-lg-8 offset-lg-2">
       <h1><%= t('.title') %></h1>
@@ -20,6 +20,7 @@
                 <li class="list-inline-item">パチスロ総設置台数：<%= @tool.total_unit %></li>
               </ul>
               <!-- 出力結果 -->
+              <div class="result">
                 <table class="table table-bordered text-center align-middle">
                   <thead>
                     <tr>
@@ -98,14 +99,17 @@
                     </tr>
                   </tbody>
                 </table>
+              </div>
               <!-- 入力した値を表示 -->
               <h4 class="mt-5 mb-3 ">入力値</h4>
-              <% @tool.tool_units.sort_by { |x| x['number'] }.each do |tool_unit| %>
-                <ul class="list-inline mb-2">
-                  <li class="list-inline-item">台番：<%= tool_unit.number %></li>
-                  <li class="list-inline-item">差枚：<%= tool_unit.medal %></li>
-                </ul>
-              <% end %>
+              <div class="unit_data">
+                <% @tool.tool_units.sort_by { |x| x['number'] }.each do |tool_unit| %>
+                  <ul class="list-inline mb-2">
+                    <li class="list-inline-item">台番：<%= tool_unit.number %></li>
+                    <li class="list-inline-item">差枚：<%= tool_unit.medal %></li>
+                  </ul>
+                <% end %>
+              </div>
             </div>
           </div>
         </div>
