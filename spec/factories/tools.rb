@@ -1,12 +1,14 @@
 FactoryBot.define do
   factory :tool do
-    sequence(:store_name) { |n| "store_#{n}" }
-    total_unit { Faker::Number.between(from: 10, to: 5000) }
-    trait :with_nested_instances do
-      after(:create) do |tool|
-        create(:tool_unit, id: tool.id)
-      end
+    store_name { 'store' }
+    total_unit { '100' }
+    user
+    after(:build) do |tool|
+      tool.tool_units << build_list(:tool_unit, 20, tool:)
     end
-    association :user
+  end
+
+  trait :created_yesterday do
+    created_at { Time.current.yesterday }
   end
 end
