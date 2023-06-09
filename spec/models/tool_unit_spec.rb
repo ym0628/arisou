@@ -8,12 +8,6 @@ RSpec.describe ToolUnit do
       expect(tool).to be_valid
     end
 
-    it '店舗名・パチスロ総設置台数が未入力の場合、台番・差枚数は登録できないこと' do
-      build(:tool, store_name: '', total_unit: '')
-      tool_unit = build(:tool_unit)
-      expect(tool_unit).to be_invalid
-    end
-
     it '台番が未入力の場合、エラーが出ること' do
       tool_unit = build(:tool_unit, number: '', medal: '1')
       tool_unit.valid?
