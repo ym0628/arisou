@@ -49,3 +49,4 @@ config/environments/*.local.yml
 .rspec
 /spec/tmp
 /vendor/bundle
+public/sitemap.xml.gz
