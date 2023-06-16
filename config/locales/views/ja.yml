@@ -19,6 +19,11 @@ ja:
     home: 'ホーム'
     lists: 'マイページ'
     tool_inputs: 'ツール新規入力'
+  static_pages:
+    terms_of_use:
+      title: "利用規約"
+    privacy_policy:
+      title: "プライバシーポリシー"
   users:
     new:
       title: 'ユーザー登録'
